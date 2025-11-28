@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+          http://www.liquibase.org/xml/ns/dbchangelog
+          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert-user-table-2025-11-28-10-00" author="serg.grey">
+        <insert tableName="users">
+            <column name="username" value="Kirill"/>
+            <column name="age" valueNumeric="30"/>
+        </insert>
+        <insert tableName="users">
+            <column name="username" value="Artem"/>
+            <column name="age" valueNumeric="28"/>
+        </insert>
+        <insert tableName="users">
+            <column name="username" value="Slava"/>
+            <column name="age" valueNumeric="33"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

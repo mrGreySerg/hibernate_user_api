@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+          http://www.liquibase.org/xml/ns/dbchangelog
+          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="insert-post-table-2025-11-28-10-00" author="serg.grey">
+
+        <!-- === User 1 (2 posts) === -->
+        <insert tableName="posts">
+            <column name="title" value="First post from user 1"/>
+            <column name="text" value="Description of first post"/>
+            <column name="date" valueDate="2025-04-24"/>
+            <column name="user_id" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="posts">
+            <column name="title" value="Second post from user 1"/>
+            <column name="text" value="Another interesting post from the first user"/>
+            <column name="date" valueDate="2025-04-25"/>
+            <column name="user_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- === User 2 (2 posts) === -->
+        <insert tableName="posts">
+            <column name="title" value="Welcome post from user 2"/>
+            <column name="text" value="Hello everyone! This is my first post here"/>
+            <column name="date" valueDate="2025-04-23"/>
+            <column name="user_id" valueNumeric="2"/>
+        </insert>
+
+        <insert tableName="posts">
+            <column name="title" value="Update from user 2"/>
+            <column name="text" value="Sharing some updates and thoughts with the community"/>
+            <column name="date" valueDate="2025-04-26"/>
+            <column name="user_id" valueNumeric="2"/>
+        </insert>
+
+        <!-- === User 3 (4 posts) === -->
+        <insert tableName="posts">
+            <column name="title" value="User 3 introduction"/>
+            <column name="text" value="Nice to meet you all! Excited to be here"/>
+            <column name="date" valueDate="2025-04-22"/>
+            <column name="user_id" valueNumeric="3"/>
+        </insert>
+
+        <insert tableName="posts">
+            <column name="title" value="Thoughts on technology"/>
+            <column name="text" value="Sharing my perspective on recent tech developments"/>
+            <column name="date" valueDate="2025-04-24"/>
+            <column name="user_id" valueNumeric="3"/>
+        </insert>
+
+        <insert tableName="posts">
+            <column name="title" value="Weekend reflections"/>
+            <column name="text" value="Some personal reflections from the past week"/>
+            <column name="date" valueDate="2025-04-27"/>
+            <column name="user_id" valueNumeric="3"/>
+        </insert>
+
+        <insert tableName="posts">
+            <column name="title" value="Future plans"/>
+            <column name="text" value="Looking forward to upcoming projects and collaborations"/>
+            <column name="date" valueDate="2025-04-28"/>
+            <column name="user_id" valueNumeric="3"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
