@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.Cascade;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "posts")
@@ -22,7 +22,7 @@ public class Post {
     private String title;
 
     @Column(name = "date", nullable = false)
-    private Date date;
+    private LocalDate date;
 
     @Column(name = "text", nullable = false)
     private String text;
