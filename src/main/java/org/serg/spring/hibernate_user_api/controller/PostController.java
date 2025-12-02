@@ -3,6 +3,7 @@ package org.serg.spring.hibernate_user_api.controller;
 import lombok.RequiredArgsConstructor;
 import org.serg.spring.hibernate_user_api.dto.PostResponseDto;
 import org.serg.spring.hibernate_user_api.service.PostService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,13 @@ public class PostController {
     ) {
        List<PostResponseDto> posts = postService.getPostsByTextLengthLessThen(textLength);
        return ResponseEntity.ok(posts);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<PostResponseDto>> getAllPosts() {
+        List<PostResponseDto> postResponseDtos =
+                postService.getAllPosts();
+        return ResponseEntity.status(HttpStatus.OK).body(postResponseDtos);
     }
 
 }

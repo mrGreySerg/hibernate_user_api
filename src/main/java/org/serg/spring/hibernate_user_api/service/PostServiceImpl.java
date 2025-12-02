@@ -65,5 +65,16 @@ public class PostServiceImpl implements PostService {
         return postResponseDtos;
     }
 
+    @Override
+    public List<PostResponseDto> getAllPosts() {
+        List<Post> posts = postRepository.findAll();
+        List<PostResponseDto> postResponseDtos =
+                new ArrayList<>();
+        for (Post post : posts) {
+            postResponseDtos.add(PostMapper.postToResponseDto(post));
+        }
+        return postResponseDtos;
+    }
+
 
 }
