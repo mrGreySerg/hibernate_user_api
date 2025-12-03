@@ -9,10 +9,8 @@ import java.time.LocalDate;
 @Builder
 public class PostResponseDto {
 
-    private Long id;
     private String title;
     private LocalDate date;
     private String text;
-    private UserResponseDto userResponseDto;
 
 }

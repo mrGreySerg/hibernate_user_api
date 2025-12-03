@@ -15,7 +15,6 @@ public class UserMapper {
 
     public static UserResponseDto userToUserResponseDto(User user) {
         return UserResponseDto.builder()
-                .id(user.getId())
                 .username(user.getUsername())
                 .age(user.getAge())
                 .build();
@@ -30,7 +29,6 @@ public class UserMapper {
 
     public static User userResponseDtoToUser(UserResponseDto userResponseDto) {
         return User.builder()
-                .id(userResponseDto.getId())
                 .username(userResponseDto.getUsername())
                 .age(userResponseDto.getAge())
                 .build();

@@ -16,11 +16,9 @@ public class PostMapper {
 
     public static PostResponseDto postToResponseDto(Post post) {
         return PostResponseDto.builder()
-                .id(post.getId())
                 .title(post.getTitle())
                 .date(post.getDate())
                 .text(post.getText())
-                .userResponseDto(UserMapper.userToUserResponseDto(post.getUser()))
                 .build();
     }
 
@@ -34,11 +32,9 @@ public class PostMapper {
 
     public static Post postResponseDtoToPost(PostResponseDto postResponseDto) {
         return Post.builder()
-                .id(postResponseDto.getId())
                 .title(postResponseDto.getTitle())
                 .date(postResponseDto.getDate())
                 .text(postResponseDto.getText())
-                .user(UserMapper.userResponseDtoToUser(postResponseDto.getUserResponseDto()))
                 .build();
     }
 
