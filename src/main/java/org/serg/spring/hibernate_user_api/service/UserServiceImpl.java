@@ -9,6 +9,8 @@ import org.serg.spring.hibernate_user_api.repository.UserRepository;
 import org.serg.spring.hibernate_user_api.util.UserMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -54,6 +56,17 @@ public class UserServiceImpl implements UserService {
         UserResponseDto userResponseDto = UserMapper.userToUserResponseDto(newUser);
 
         return userResponseDto;
+    }
+
+    @Override
+    public List<UserResponseDto> getAllUsers() {
+        List<User> users = userRepository.findAll();
+        List<UserResponseDto> userResponseDtos =
+                new ArrayList<>();
+        for(User user: users) {
+            userResponseDtos.add(UserMapper.userToUserResponseDto(user));
+        }
+        return userResponseDtos;
     }
 
 }
