@@ -9,7 +9,9 @@ import org.serg.spring.hibernate_user_api.entity.User;
 import org.serg.spring.hibernate_user_api.repository.PostRepository;
 import org.serg.spring.hibernate_user_api.repository.UserRepository;
 import org.serg.spring.hibernate_user_api.util.PostMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +76,15 @@ public class PostServiceImpl implements PostService {
             postResponseDtos.add(PostMapper.postToResponseDto(post));
         }
         return postResponseDtos;
+    }
+
+    @Override
+    public PostResponseDto getPostById(Long id) {
+        Post post = postRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Post not found"));
+        PostResponseDto postResponseDto = PostMapper.postToResponseDto(post);
+        return postResponseDto;
     }
 
 

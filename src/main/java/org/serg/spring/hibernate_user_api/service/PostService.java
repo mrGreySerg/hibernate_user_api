@@ -12,5 +12,6 @@ public interface PostService {
     List<PostResponseDto> getAllPostsByUserId(Long id);
     List<PostResponseDto> getPostsByTextLengthLessThen(int length);
     List<PostResponseDto> getAllPosts();
+    PostResponseDto getPostById(Long id);
 
 }
