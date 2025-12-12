@@ -27,6 +27,15 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(users);
     }
 
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<UserResponseDto> getUserById(
+            @PathVariable Long id
+    ) {
+        UserResponseDto userResponseDto =
+                userService.getUserById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(userResponseDto);
+    }
+
     @PostMapping
     public ResponseEntity<UserResponseDto> saveUser(@RequestBody UserRequestDto userRequestDto) {
         UserResponseDto userResponseDto = userService.saveUser(userRequestDto);
